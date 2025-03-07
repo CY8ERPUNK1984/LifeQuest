@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeQuest - Привычки</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="habits-styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Фиксированный заголовок -->
+        <div class="fixed-header">
+            <div class="back-button">
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад</a>
+            </div>
+            <div class="audio-player">
+                <div class="audio-controls">
+                    <button id="play-pause-btn">
+                        <i id="play-pause-icon" class="fas fa-play"></i>
+                    </button>
+                    <select id="track-select">
+                        <option value="aura">Aura</option>
+                    </select>
+                    <button id="repeat-btn">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                </div>
+                <div class="volume-control">
+                    <i class="fas fa-volume-down"></i>
+                    <input type="range" id="volume-slider" min="0" max="100" value="50">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="profile-section">
+            <div class="profile-header">
+                <div class="level-info">
+                    <div class="user-avatar-container">
+                        <img id="user-avatar" src="images/avatars/avatar1.svg" alt="Аватар">
+                        <div class="level-badge">
+                            <span id="current-level">1</span>
+                        </div>
+                    </div>
+                    <div class="user-name" id="user-name">Пользователь</div>
+                </div>
+                <div class="xp-display">
+                    <div class="xp-number" id="xp-number">0</div>
+                    <div class="xp-text">XP собрано</div>
+                    <button id="logout-btn" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="xp-progress-bar"></div>
+                <div class="progress-text">
+                    <span id="current-xp">0</span> / <span id="next-level-xp">100</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-tabs">
+            <a href="index.html" class="nav-tab">Задачи</a>
+            <a href="habits.html" class="nav-tab active">Привычки</a>
+        </div>
+        
+        <div class="habits-container">
+            <div class="habits-header">
+                <h3>Мои привычки</h3>
+                <button id="add-habit-btn" class="add-btn">
+                    <i class="fas fa-plus"></i> Новая привычка
+                </button>
+            </div>
+            
+            <div class="habits-calendar">
+                <div class="calendar-header">
+                    <button id="prev-week-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div id="current-month">Март 2025</div>
+                    <button id="next-week-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="week-days" id="week-days">
+                    <!-- Дни недели будут добавлены динамически -->
+                </div>
+            </div>
+            
+            <div class="habits-list" id="habits-list">
+                <!-- Список привычек будет добавлен динамически -->
+                <div class="empty-state" id="empty-habits-state">
+                    <img src="images/empty-habits.svg" alt="Нет привычек">
+                    <h3>У вас пока нет привычек</h3>
+                    <p>Добавьте новые привычки для отслеживания и улучшения своей жизни</p>
+                    <button id="create-first-habit" class="primary-btn">
+                        <i class="fas fa-plus"></i> Создать первую привычку
+                    </button>
+                </div>
+            </div>
+            
+            <div class="stats-container">
+                <h3>Статистика</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="current-streak">0</div>
+                            <div class="stat-label">Текущая серия</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="best-streak">0</div>
+                            <div class="stat-label">Лучшая серия</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="completion-rate">0%</div>
+                            <div class="stat-label">Выполнение</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="total-completed">0</div>
+                            <div class="stat-label">Всего выполнено</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно добавления новой привычки -->
+    <div class="modal" id="habit-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 id="modal-title">Новая привычка</h3>
+            <form id="habit-form">
+                <div class="form-group">
+                    <label for="habit-name">Название</label>
+                    <input type="text" id="habit-name" required placeholder="Например: Медитация">
+                </div>
+                <div class="form-group">
+                    <label for="habit-description">Описание (опционально)</label>
+                    <textarea id="habit-description" placeholder="Как и когда вы будете выполнять эту привычку?"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Иконка</label>
+                    <div class="icon-select" id="icon-select">
+                        <div class="icon-option selected" data-icon="fas fa-running"><i class="fas fa-running"></i></div>
+                        <div class="icon-option" data-icon="fas fa-book"><i class="fas fa-book"></i></div>
+                        <div class="icon-option" data-icon="fas fa-apple-alt"><i class="fas fa-apple-alt"></i></div>
+                        <div class="icon-option" data-icon="fas fa-meditation"><i class="fas fa-meditation"></i></div>
+                        <div class="icon-option" data-icon="fas fa-dumbbell"><i class="fas fa-dumbbell"></i></div>
+                        <div class="icon-option" data-icon="fas fa-glass-water"><i class="fas fa-glass-water"></i></div>
+                        <div class="icon-option" data-icon="fas fa-bed"><i class="fas fa-bed"></i></div>
+                        <div class="icon-option" data-icon="fas fa-smoking-ban"><i class="fas fa-smoking-ban"></i></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Цвет</label>
+                    <div class="color-select" id="color-select">
+                        <div class="color-option selected" data-color="#4CAF50" style="background-color: #4CAF50;"></div>
+                        <div class="color-option" data-color="#2196F3" style="background-color: #2196F3;"></div>
+                        <div class="color-option" data-color="#9C27B0" style="background-color: #9C27B0;"></div>
+                        <div class="color-option" data-color="#FF5722" style="background-color: #FF5722;"></div>
+                        <div class="color-option" data-color="#FFB300" style="background-color: #FFB300;"></div>
+                        <div class="color-option" data-color="#E91E63" style="background-color: #E91E63;"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="habit-frequency">Частота</label>
+                    <select id="habit-frequency">
+                        <option value="daily">Ежедневно</option>
+                        <option value="weekly">По дням недели</option>
+                        <option value="custom">Своя частота</option>
+                    </select>
+                </div>
+                <div class="form-group" id="weekdays-group" style="display: none;">
+                    <label>Дни недели</label>
+                    <div class="weekdays-select">
+                        <div class="weekday-option" data-day="1">ПН</div>
+                        <div class="weekday-option" data-day="2">ВТ</div>
+                        <div class="weekday-option" data-day="3">СР</div>
+                        <div class="weekday-option" data-day="4">ЧТ</div>
+                        <div class="weekday-option" data-day="5">ПТ</div>
+                        <div class="weekday-option" data-day="6">СБ</div>
+                        <div class="weekday-option" data-day="0">ВС</div>
+                    </div>
+                </div>
+                <div class="form-group" id="custom-frequency-group" style="display: none;">
+                    <label for="custom-days">Каждые N дней</label>
+                    <input type="number" id="custom-days" min="1" max="90" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="habit-reminder">Напоминание</label>
+                    <div class="reminder-toggle">
+                        <input type="checkbox" id="reminder-toggle">
+                        <label for="reminder-toggle" class="toggle-label"></label>
+                        <span>Включить напоминания</span>
+                    </div>
+                </div>
+                <div class="form-group" id="reminder-time-group" style="display: none;">
+                    <label for="reminder-time">Время напоминания</label>
+                    <input type="time" id="reminder-time" value="09:00">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="save-habit-btn" class="primary-btn">Сохранить привычку</button>
+                    <button type="button" id="cancel-habit-btn" class="secondary-btn">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="habits.js"></script>
+</body>
+</html>

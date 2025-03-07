@@ -16,10 +16,12 @@ const CONFIG = {
 // App state
 let state = {
     user: {
+        id: null,
         name: 'Пользователь',
         level: 1,
         xp: 0,
-        totalXP: 0
+        totalXP: 0,
+        avatar: '1'
     },
     tasks: [],
     goals: [],
@@ -31,9 +33,45 @@ let state = {
 
 // Load data from localStorage if available
 function loadState() {
+    // Check if user is authenticated
+    const authToken = localStorage.getItem('lifeQuestAuthToken');
+    const userId = localStorage.getItem('lifeQuestUserId');
+    
+    if (!authToken || !userId) {
+        // User not authenticated, redirect to login page
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    // Load user data from users array
+    const users = JSON.parse(localStorage.getItem('lifeQuestUsers') || '[]');
+    const currentUser = users.find(u => u.id === userId);
+    
+    if (!currentUser) {
+        // User not found, redirect to login page
+        localStorage.removeItem('lifeQuestAuthToken');
+        localStorage.removeItem('lifeQuestUserId');
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    // Load app state
     const savedState = localStorage.getItem('gamifyLifeState');
     if (savedState) {
         state = JSON.parse(savedState);
+        
+        // Update user data
+        state.user.id = currentUser.id;
+        state.user.name = currentUser.name;
+        state.user.avatar = currentUser.avatar;
+        
+        updateUI();
+    } else {
+        // Create new state for this user
+        state.user.id = currentUser.id;
+        state.user.name = currentUser.name;
+        state.user.avatar = currentUser.avatar;
+        saveState();
         updateUI();
     }
 }
@@ -46,6 +84,8 @@ function saveState() {
 // DOM Elements
 const elements = {
     userName: document.getElementById('user-name'),
+    userAvatar: document.getElementById('user-avatar'),
+    logoutBtn: document.getElementById('logout-btn'),
     currentLevel: document.getElementById('current-level'),
     xpNumber: document.getElementById('xp-number'),
     currentXP: document.getElementById('current-xp'),
@@ -272,6 +312,11 @@ function updateUI() {
     elements.currentLevel.textContent = state.user.level;
     elements.xpNumber.textContent = state.user.totalXP;
     
+    // Update avatar if element exists
+    if (elements.userAvatar) {
+        elements.userAvatar.src = `images/avatars/avatar${state.user.avatar}.svg`;
+    }
+    
     // Update progress bar
     const xpForNextLevel = CONFIG.xpPerLevel * state.user.level;
     const progressPercentage = (state.user.xp / xpForNextLevel) * 100;
@@ -291,6 +336,8 @@ function init() {
     renderGoals();
     renderRewards();
     updateUI();
+    setupLogout();
+    initAudioPlayer();
     
     // Add CSS for level up message
     const style = document.createElement('style');
@@ -569,3 +616,196 @@ function showRewardClaimedMessage(rewardName) {
 
 // Start the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', init);
+
+// Audio Player Functionality
+const audioPlayer = {
+    elements: {
+        container: document.querySelector('.audio-player-header-fixed'),
+        playPauseBtn: document.getElementById('play-pause-btn'),
+        playPauseIcon: document.querySelector('#play-pause-btn i'),
+        volumeSlider: document.getElementById('volume-slider'),
+        trackSelect: document.getElementById('audio-track-select'),
+        repeatBtn: document.getElementById('repeat-button')
+    },
+    state: {
+        currentAudio: null,
+        currentTrack: null,
+        isPlaying: false,
+        volume: 0.7,
+        audioSources: {
+            aura: 'audio/sounds/aura.mp3'
+        }
+    },
+    init() {
+        // Check if elements exist
+        if (!this.elements.container) return;
+        
+        // Setup event listeners
+        this.elements.playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+        this.elements.volumeSlider.addEventListener('input', (e) => this.adjustVolume(e.target.value));
+        
+        // Track selection
+        this.elements.trackSelect.addEventListener('change', (e) => {
+            this.selectTrack(e.target.value);
+        });
+        
+        // Initialize volume
+        this.adjustVolume(this.elements.volumeSlider.value);
+        
+        // Create audio objects for preloading
+        this.preloadAudios();
+    },
+    preloadAudios() {
+        // For each track, create an audio element for later use
+        Object.keys(this.state.audioSources).forEach(key => {
+            const src = this.state.audioSources[key];
+            const audio = new Audio();
+            audio.src = src;
+            audio.loop = this.state.isRepeatEnabled;
+            audio.preload = 'auto';
+            audio.volume = this.state.volume;
+            
+            // Add event listener for when metadata is loaded
+            audio.addEventListener('loadedmetadata', () => {
+                if (this.state.currentTrack === key) {
+                    this.updateTrackDuration();
+                }
+            });
+            
+            // Add event listener for when track ends
+            audio.addEventListener('ended', () => {
+                if (!this.state.isRepeatEnabled) {
+                    this.pauseAudio();
+                    this.state.isPlaying = false;
+                    this.updatePlayPauseButton();
+                }
+            });
+            
+            this.state.audioSources[key] = { 
+                src: src,
+                audio: audio 
+            };
+        });
+    },
+    togglePlayer() {
+        // Больше не используется
+    },
+    closePlayer() {
+        // Больше не используется
+    },
+    selectTrack(trackName) {
+        // Stop current track if playing
+        if (this.state.currentAudio) {
+            this.state.currentAudio.pause();
+            this.state.isPlaying = false;
+            this.updatePlayPauseButton();
+        }
+        
+        // Set current track
+        this.state.currentTrack = trackName;
+        this.state.currentAudio = this.state.audioSources[trackName].audio;
+        
+        // Apply repeat setting
+        this.state.currentAudio.loop = this.state.isRepeatEnabled;
+        
+        // Start playing if needed
+        if (this.state.isPlaying) {
+            this.playAudio();
+        }
+    },
+    togglePlayPause() {
+        if (!this.state.currentTrack) {
+            // Select the current value in the dropdown
+            const trackName = this.elements.trackSelect.value;
+            this.selectTrack(trackName);
+        }
+        
+        if (this.state.isPlaying) {
+            this.pauseAudio();
+        } else {
+            this.playAudio();
+        }
+        
+        this.state.isPlaying = !this.state.isPlaying;
+        this.updatePlayPauseButton();
+    },
+    playAudio() {
+        if (this.state.currentAudio) {
+            this.state.currentAudio.play()
+                .catch(error => {
+                    console.error('Error playing audio:', error);
+                    // Handle autoplay policy issues
+                    if (error.name === 'NotAllowedError') {
+                        alert('Автоматическое воспроизведение звука заблокировано браузером. Пожалуйста, разрешите воспроизведение звука для этого сайта.');
+                    }
+                });
+        }
+    },
+    pauseAudio() {
+        if (this.state.currentAudio) {
+            this.state.currentAudio.pause();
+        }
+    },
+    updatePlayPauseButton() {
+        if (this.state.isPlaying) {
+            this.elements.playPauseIcon.className = 'fas fa-pause';
+        } else {
+            this.elements.playPauseIcon.className = 'fas fa-play';
+        }
+    },
+    adjustVolume(value) {
+        const volume = parseFloat(value) / 100;
+        this.state.volume = volume;
+        
+        // Update all audio elements
+        Object.keys(this.state.audioSources).forEach(key => {
+            if (this.state.audioSources[key].audio) {
+                this.state.audioSources[key].audio.volume = volume;
+            }
+        });
+        
+        // Update the visual volume slider gradient
+        const volumeSlider = this.elements.volumeSlider;
+        const percentage = value;
+        volumeSlider.style.setProperty('--volume-percentage', `${percentage}%`);
+    },
+    
+    toggleRepeat() {
+        this.state.isRepeatEnabled = !this.state.isRepeatEnabled;
+        
+        // Update repeat button visual state
+        if (this.state.isRepeatEnabled) {
+            this.elements.repeatBtn.classList.add('active');
+        } else {
+            this.elements.repeatBtn.classList.remove('active');
+        }
+        
+        // Update current audio loop setting
+        if (this.state.currentAudio) {
+            this.state.currentAudio.loop = this.state.isRepeatEnabled;
+        }
+    }
+};
+
+// Function to initialize audio player
+function initAudioPlayer() {
+    audioPlayer.init();
+}
+
+// Setup logout functionality
+function setupLogout() {
+    if (elements.logoutBtn) {
+        elements.logoutBtn.addEventListener('click', () => {
+            // Clear auth tokens
+            localStorage.removeItem('lifeQuestAuthToken');
+            localStorage.removeItem('lifeQuestUserId');
+            
+            // Redirect to login page
+            window.location.href = 'login.html';
+        });
+    }
+}
+
+// Start the app when DOM is loaded
+document.addEventListener('DOMContentLoaded', init);
+

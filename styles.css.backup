@@ -1,0 +1,6800 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #FF9800;
+    --tertiary-color: #FFC107;
+    --background-color: #f5f5f5;
+    --card-bg-color: #ffffff;
+    --text-color: #333333;
+    --light-text: #777777;
+    --border-radius: 16px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Profile Section */
+.profile-section {
+    background: linear-gradient(135deg, #7bdeab, #4CAF50);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.profile-section::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,0.1)"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.3;
+    transform: rotate(15deg);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.level-info {
+    display: flex;
+    align-items: center;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.level-circle {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.user-name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.xp-display {
+    text-align: right;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.xp-number {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.xp-text {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.progress-bar-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 10px;
+    position: relative;
+    margin-top: 10px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.progress-bar {
+    background-color: white;
+    height: 100%;
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.progress-text {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Tabs */
+.tabs-container {
+    display: flex;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.tab.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.section-header h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.add-btn {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Tasks */
+.task-item {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Goals */
+.goal-item {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.goal-name {
+    font-weight: 500;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.goal-size {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.goal-xp {
+    font-size: 12px;
+    color: var(--light-text);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.goal-progress-container {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.goal-progress {
+    background: linear-gradient(90deg, var(--primary-color), #7bdeab);
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.3s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.goal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.goal-actions button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.progress-btn {
+    background-color: #E3F2FD;
+    color: #1976D2;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.progress-btn:hover {
+    background-color: #BBDEFB;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.complete-btn {
+    background-color: #E8F5E9;
+    color: var(--primary-color);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.complete-btn:hover:not([disabled]) {
+    background-color: #C8E6C9;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.complete-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Rewards */
+.reward-item {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.reward-item.size-s {
+    background-color: rgba(77, 182, 172, 0.1);
+    border-left: 4px solid #4DB6AC;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.reward-item.size-m {
+    background-color: rgba(156, 39, 176, 0.1);
+    border-left: 4px solid #9C27B0;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.reward-item.size-l {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #FFC107;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.reward-content {
+    flex: 1;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.reward-name {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.reward-cost {
+    color: var(--light-text);
+    font-size: 14px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.reward-cost.can-afford {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.claim-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.claim-btn:hover:not([disabled]) {
+    background-color: #F57C00;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.claim-btn[disabled] {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.stats-container {
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.stats-container h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.stat-label {
+    color: var(--light-text);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.stat-value {
+    font-weight: 500;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-item:nth-child(3n+1) {
+    background-color: rgba(255, 152, 0, 0.1);
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-item:nth-child(3n+2) {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid var(--tertiary-color);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-item:nth-child(3n+3) {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 2px solid #ddd;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-checkbox.checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-checkbox.checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-content {
+    flex: 1;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-name {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-size {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-size.size-s {
+    background-color: #E0F7FA;
+    color: #00ACC1;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-size.size-m {
+    background-color: #E8F5E9;
+    color: #43A047;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-size.size-l {
+    background-color: #FFF8E1;
+    color: #FFB300;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.task-xp {
+    font-size: 12px;
+    color: var(--light-text);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--light-text);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.size-options {
+    display: flex;
+    gap: 15px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.size-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.size-option input[type="radio"] {
+    display: none;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.size-label {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.size-option input[type="radio"]:checked + .size-label {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.submit-btn:hover {
+    background-color: #43A047;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Stats */
+.stats-container {
+    margin-top: 30px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.stats-container h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.stat-label {
+    color: var(--light-text);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.stat-value {
+    font-weight: 500;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2000;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .app-container {
+        padding: 10px;
+    }
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+    
+    .profile-section {
+        padding: 15px;
+    }
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+    
+    .xp-number {
+        font-size: 24px;
+    }
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+    
+    .tab {
+        padding: 12px 0;
+        font-size: 14px;
+    }
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+    
+    .section-header h2 {
+        font-size: 16px;
+    }
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Audio Player Styles - New Fixed Header */
+.audio-player-header-fixed {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-player-toggle {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-size: 22px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-player-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-player {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 300px;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 15px;
+    display: none;
+    transform-origin: bottom right;
+    animation: scaleIn 0.3s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.8); opacity: 0; }
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+    to { transform: scale(1); opacity: 1; }
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-player.active {
+    display: block;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-player-header h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.close-audio-player {
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.close-audio-player:hover {
+    opacity: 1;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-controls {
+    margin-bottom: 15px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-control-buttons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 5px 0;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.play-pause {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.play-pause:hover {
+    background-color: #43a047;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: 10px;
+    padding: 0 5px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.volume-control i {
+    margin-right: 10px;
+    opacity: 0.7;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.volume-slider-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+#volume-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 4px;
+    background-color: #ddd;
+    border-radius: 2px;
+    outline: none;
+    margin: 0 5px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-progress {
+    height: 4px;
+    background-color: #eee;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: var(--primary-color);
+    transition: width 0.1s linear;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-tracks {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-track {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-track:hover {
+    background-color: #eeeeee;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.audio-track.active {
+    background-color: #e8f5e9;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.track-name {
+    font-size: 14px;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.track-duration {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Новые стили для аудио-плеера */
+.audio-controls-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.audio-track-selector {
+    min-width: 120px;
+    margin-left: 10px;
+}
+
+.audio-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-header-fixed h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Адаптивные стили для аудио-плеера */
+@media (max-width: 480px) {
+    .audio-player-header-fixed {
+        padding: 10px;
+    }
+
+    .audio-controls-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .audio-track-selector {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+

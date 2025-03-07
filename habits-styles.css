@@ -1,0 +1,553 @@
+/* Стили для страницы привычек */
+/* Стили для кнопки Назад */
+.fixed-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.back-button {
+    margin-right: 20px;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.back-link:hover {
+    transform: translateX(-3px);
+    color: var(--accent-color);
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+.habits-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.habits-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}
+
+/* Стили для календаря */
+.habits-calendar {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.calendar-header button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#current-month {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.week-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.week-day:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.week-day.today {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.day-name {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.day-number {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.week-day.today .day-number {
+    background-color: var(--primary-color);
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Стили для списка привычек */
+.habits-list {
+    min-height: 200px;
+}
+
+.habit-item {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.habit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.habit-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.habit-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.habit-name {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.habit-description {
+    font-size: 13px;
+    color: #666;
+}
+
+.habit-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.habit-edit, .habit-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #666;
+    transition: background-color 0.2s;
+}
+
+.habit-edit:hover, .habit-delete:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.habit-streak {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.habit-streak i {
+    color: #ff9800;
+}
+
+.habit-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.habit-day {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.habit-checkbox {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.habit-checkbox:hover {
+    border-color: var(--primary-color);
+}
+
+.habit-checkbox.checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.habit-checkbox.disabled {
+    background-color: #f0f0f0;
+    cursor: default;
+}
+
+.habit-day-label {
+    font-size: 10px;
+    margin-top: 5px;
+    color: #888;
+}
+
+/* Стили для пустого состояния */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.empty-state img {
+    max-width: 150px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.empty-state h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+/* Стили для статистики */
+.stats-container {
+    margin-top: 30px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 50px auto;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Стили для выбора иконки */
+.icon-select, .color-select {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.icon-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.icon-option:hover {
+    background-color: #eee;
+}
+
+.icon-option.selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Стили для выбора цвета */
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    border-color: #333;
+    transform: scale(1.1);
+}
+
+/* Стили для выбора дней недели */
+.weekdays-select {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.weekday-option {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.weekday-option:hover {
+    background-color: #eee;
+}
+
+.weekday-option.selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Стили для переключателя */
+.reminder-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reminder-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    background-color: #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.toggle-label:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+input[type="checkbox"]:checked + .toggle-label {
+    background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked + .toggle-label:after {
+    left: calc(100% - 2px - 20px);
+}
+
+/* Стили для навигации */
+.nav-tabs {
+    display: flex;
+    background-color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.nav-tab {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.nav-tab:hover {
+    color: var(--primary-color);
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .habit-checkboxes {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
+    .habit-day-label {
+        display: none;
+    }
+}
