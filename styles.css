@@ -695,15 +695,20 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
 }
 
 .modal-content {
     background-color: var(--card-bg-color);
-    margin: 15% auto;
-    padding: 25px;
+    margin: 30px auto;
+    padding: 30px;
     border-radius: var(--border-radius);
-    width: 90%;
-    max-width: 400px;
+    width: 94%;
+    max-width: 450px;
+    max-height: 80vh;
+    overflow-y: auto;
     box-shadow: var(--shadow);
     position: relative;
 }

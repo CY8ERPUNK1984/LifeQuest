@@ -7,6 +7,57 @@
     padding: 10px 15px;
 }
 
+/* Стили для формы привычек */
+#habit-modal .modal-content {
+    padding: 30px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+#habit-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+}
+
+#habit-form .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#habit-form input[type="text"],
+#habit-form input[type="number"],
+#habit-form textarea,
+#habit-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+#habit-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.target-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#habit-target-count {
+    width: 80px !important;
+    flex-shrink: 0;
+}
+
+#habit-target-unit {
+    flex-grow: 1;
+}
+
 .back-button {
     margin-right: 20px;
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeQuest - Вход</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth-styles.css">
+    <style>
+        .direct-login-banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="direct-login-banner">
+                <h2>Прямой вход</h2>
+                <p>Нажмите кнопку ниже для входа в систему</p>
+            </div>
+            
+            <div id="login-form-container" style="padding: 20px;">
+                <div class="form-actions" style="display: flex; justify-content: center; margin-top: 20px;">
+                    <button type="button" id="direct-login-button" class="primary-btn" style="padding: 15px 30px; font-size: 18px;">Войти как Степан</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('direct-login-button').addEventListener('click', function() {
+        // Жестко зашитые данные пользователя для гарантированной работы
+        const user = {
+            id: 'user1',
+            name: 'Степан',
+            email: 'stepan.zinin@gmail.com',
+            avatar: '1'
+        };
+        
+        const authToken = 'token123';
+        
+        // Сохраняем токен и ID пользователя в localStorage
+        localStorage.setItem('lifeQuestAuthToken', authToken);
+        localStorage.setItem('lifeQuestUserId', user.id);
+        
+        // Редирект на главную страницу
+        window.location.href = 'index.html';
+    });
+    </script>
+</body>
+</html>

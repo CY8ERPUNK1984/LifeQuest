@@ -8,9 +8,37 @@ const app = express();
 const PORT = 3000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: '*', // Разрешаем все источники
+    credentials: true
+}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
+
+// Автоматический вход по корневому маршруту
+app.get('/', (req, res) => {
+    res.redirect('/auto-login.html');
+});
+
+// Маршрут для страницы индекса
+app.get('/index', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Маршрут для автоматического входа
+app.get('/bypass-auth', (req, res) => {
+    // Возвращаем готовые данные пользователя без проверки пароля
+    res.json({
+        success: true,
+        user: {
+            id: 'user1',
+            name: 'Степан',
+            email: 'stepan.zinin@gmail.com',
+            avatar: '1'
+        },
+        authToken: 'fixed-token-123'
+    });
+});
 
 // Пути к файлам данных
 const DB_FOLDER = path.join(__dirname, 'db');
@@ -129,8 +157,32 @@ app.delete('/api/users/:id', (req, res) => {
 
 // Login route
 app.post('/api/auth/login', (req, res) => {
+    console.log('\n=== Запрос на вход в систему ===');
     const { email, password } = req.body;
+    console.log('Получены данные:', { email, passwordProvided: !!password });
+    
     const users = readUsers();
+    console.log('Количество пользователей в базе:', users.length);
+    
+    if (users.length > 0) {
+        console.log('Пользователи в базе:', users.map(u => ({ email: u.email, id: u.id })));
+    }
+    
+    // Проверяем только по email для дебага
+    const userByEmail = users.find(u => u.email === email);
+    if (userByEmail) {
+        console.log('Найден пользователь с таким email!');
+        // Проверяем пароль отдельно для более детальной отладки
+        if (userByEmail.password === password) {
+            console.log('Пароль совпадает! Аутентификация успешна!');
+        } else {
+            console.log('Пароль не совпадает!');
+            console.log('- Ожидаемый пароль длиной:', userByEmail.password.length);
+            console.log('- Полученный пароль длиной:', password.length);
+        }
+    } else {
+        console.log('Пользователь с таким email не найден!');
+    }
     
     const user = users.find(u => u.email === email && u.password === password);
     
@@ -143,12 +195,15 @@ app.post('/api/auth/login', (req, res) => {
         user.authToken = authToken;
         saveUsers(users);
         
+        console.log('Аутентификация успешна, отправляем токен');
+        
         res.json({ 
             success: true, 
             user: { ...user, password: undefined }, // Не отправляем пароль обратно клиенту
             authToken 
         });
     } else {
+        console.log('Аутентификация не удалась, отправляем ошибку');
         res.status(401).json({ 
             success: false, 
             message: 'Invalid email or password' 

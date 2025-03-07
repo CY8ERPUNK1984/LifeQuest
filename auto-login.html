@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeQuest - Автовход</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+        .message {
+            color: #777;
+            margin-bottom: 25px;
+        }
+        .login-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .login-button:hover {
+            background-color: #45a049;
+        }
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4CAF50;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>LifeQuest</h1>
+        <div class="message">Нажмите кнопку для автоматического входа в приложение</div>
+        <button id="autoLoginBtn" class="login-button">Войти в приложение</button>
+        
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <div>Выполняется вход...</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('autoLoginBtn').addEventListener('click', function() {
+            // Показываем индикатор загрузки
+            document.getElementById('loading').style.display = 'block';
+            this.disabled = true;
+            
+            // Имитация задержки для UX
+            setTimeout(function() {
+                // Устанавливаем данные аутентификации напрямую
+                localStorage.setItem('lifeQuestAuthToken', 'fixed-token-123');
+                localStorage.setItem('lifeQuestUserId', 'user1');
+                
+                // Переходим на главную страницу
+                window.location.href = 'index.html';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

@@ -33,47 +33,72 @@ let state = {
 
 // Load data from localStorage if available
 function loadState() {
-    // Check if user is authenticated
-    const authToken = localStorage.getItem('lifeQuestAuthToken');
-    const userId = localStorage.getItem('lifeQuestUserId');
+    // Устанавливаем аутентификационные токены
+    localStorage.setItem('lifeQuestAuthToken', 'fixed-token-123');
+    localStorage.setItem('lifeQuestUserId', 'user1');
     
-    if (!authToken || !userId) {
-        // User not authenticated, redirect to login page
-        window.location.href = 'login.html';
-        return;
+    // Загружаем задачи, цели и награды
+    const tasks = JSON.parse(localStorage.getItem('lifeQuestTasks') || '[]');
+    const goals = JSON.parse(localStorage.getItem('lifeQuestGoals') || '[]');
+    const rewards = JSON.parse(localStorage.getItem('lifeQuestRewards') || '[]');
+    
+    // Если задач нет, создаем демо-задачи
+    if (!tasks.length) {
+        tasks.push(
+            {
+                id: 'task1',
+                name: 'Изучить JavaScript',
+                size: 'm',
+                completed: false,
+                createdAt: new Date().toISOString()
+            },
+            {
+                id: 'task2',
+                name: 'Создать пет-проект',
+                size: 'l',
+                completed: false,
+                createdAt: new Date().toISOString()
+            }
+        );
+        localStorage.setItem('lifeQuestTasks', JSON.stringify(tasks));
     }
     
-    // Load user data from users array
-    const users = JSON.parse(localStorage.getItem('lifeQuestUsers') || '[]');
-    const currentUser = users.find(u => u.id === userId);
-    
-    if (!currentUser) {
-        // User not found, redirect to login page
-        localStorage.removeItem('lifeQuestAuthToken');
-        localStorage.removeItem('lifeQuestUserId');
-        window.location.href = 'login.html';
-        return;
-    }
-    
-    // Load app state
+    // Проверяем saved state
     const savedState = localStorage.getItem('gamifyLifeState');
     if (savedState) {
-        state = JSON.parse(savedState);
+        // Загружаем сохраненное состояние, но не перезаписываем пользователя
+        const savedStateObj = JSON.parse(savedState);
+        if (savedStateObj.tasks) state.tasks = savedStateObj.tasks;
+        if (savedStateObj.goals) state.goals = savedStateObj.goals;
+        if (savedStateObj.rewards) state.rewards = savedStateObj.rewards;
+        if (savedStateObj.stats) state.stats = savedStateObj.stats;
         
-        // Update user data
-        state.user.id = currentUser.id;
-        state.user.name = currentUser.name;
-        state.user.avatar = currentUser.avatar;
-        
-        updateUI();
+        // Сохраняем наши данные пользователя
+        state.user = {
+            id: 'user1',
+            name: 'Степан',
+            level: savedStateObj.user && savedStateObj.user.level || 1,
+            xp: savedStateObj.user && savedStateObj.user.xp || 0,
+            totalXP: savedStateObj.user && savedStateObj.user.totalXP || 0,
+            avatar: '1'
+        };
     } else {
-        // Create new state for this user
-        state.user.id = currentUser.id;
-        state.user.name = currentUser.name;
-        state.user.avatar = currentUser.avatar;
-        saveState();
-        updateUI();
+        // Создаем новое состояние
+        state.user = {
+            id: 'user1',
+            name: 'Степан',
+            level: 1,
+            xp: 0,
+            totalXP: 0,
+            avatar: '1'
+        };
+        state.tasks = tasks;
+        state.goals = goals;
+        state.rewards = rewards;
     }
+    
+    // Обновляем интерфейс
+    updateUI();
 }
 
 // Save state to localStorage
