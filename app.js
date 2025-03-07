@@ -122,6 +122,37 @@ elements.tabs.forEach(tab => {
             content.classList.remove('active');
         });
         document.getElementById(`${tabName}-content`).classList.add('active');
+        
+        // Инициализируем модуль привычек при переключении на соответствующую вкладку
+        if (tabName === 'habits' && typeof habitsModule !== 'undefined') {
+            habitsModule.init();
+        }
+        
+        // Добавляем прямой обработчик события клика для кнопки после загрузки DOM
+        setTimeout(() => {
+            if (tabName === 'habits') {
+                const createFirstHabitBtn = document.getElementById('create-first-habit');
+                if (createFirstHabitBtn) {
+                    // Для отладки
+                    console.log('Найдена кнопка create-first-habit');
+                    
+                    // Удаляем все существующие обработчики событий
+                    const newBtn = createFirstHabitBtn.cloneNode(true);
+                    createFirstHabitBtn.parentNode.replaceChild(newBtn, createFirstHabitBtn);
+                    
+                    // Добавляем новый обработчик напрямую
+                    newBtn.onclick = function() {
+                        console.log('Кнопка create-first-habit нажата');
+                        if (typeof habitsModule !== 'undefined') {
+                            habitsModule.openHabitModal();
+                        } else {
+                            console.error('habitsModule не определен');
+                        }
+                        return false; // Предотвращаем всплытие события
+                    };
+                }
+            }
+        }, 500);
     });
 });
 

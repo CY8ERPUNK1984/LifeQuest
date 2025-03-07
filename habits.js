@@ -481,12 +481,59 @@ const habitsModule = {
         nameElement.className = 'habit-name';
         nameElement.textContent = habit.name;
         
+        // Создаем элемент для категории
+        const categoryElement = document.createElement('div');
+        categoryElement.className = 'habit-category';
+        
+        // Определяем текст категории
+        let categoryText = '';
+        switch(habit.category) {
+            case 'health':
+                categoryText = 'Здоровье';
+                break;
+            case 'productivity':
+                categoryText = 'Продуктивность';
+                break;
+            case 'fitness':
+                categoryText = 'Фитнес';
+                break;
+            case 'mindfulness':
+                categoryText = 'Осознанность';
+                break;
+            case 'learning':
+                categoryText = 'Обучение';
+                break;
+            default:
+                categoryText = 'Другое';
+        }
+        
+        categoryElement.textContent = categoryText;
+        
         const descriptionElement = document.createElement('div');
         descriptionElement.className = 'habit-description';
-        descriptionElement.textContent = habit.description || '';
+        
+        // Если есть целевое значение, добавляем его к описанию
+        if (habit.targetCount && habit.targetCount > 1) {
+            let targetText = `Цель: ${habit.targetCount}`;
+            if (habit.targetUnit) {
+                targetText += ` ${habit.targetUnit}`;
+            }
+            
+            // Если есть описание, добавляем цель внизу
+            if (habit.description) {
+                descriptionElement.textContent = habit.description + ' | ' + targetText;
+            } else {
+                descriptionElement.textContent = targetText;
+            }
+        } else {
+            descriptionElement.textContent = habit.description || '';
+        }
         
         textElement.appendChild(nameElement);
-        if (habit.description) {
+        if (habit.category) {
+            textElement.appendChild(categoryElement);
+        }
+        if (habit.description || (habit.targetCount && habit.targetCount > 1)) {
             textElement.appendChild(descriptionElement);
         }
         
@@ -512,7 +559,10 @@ const habitsModule = {
         headerElement.appendChild(infoElement);
         headerElement.appendChild(actionsElement);
         
-        // Добавляем информацию о серии
+        // Добавляем информацию о серии и прогрессе
+        const streakContainer = document.createElement('div');
+        streakContainer.className = 'habit-stats-container';
+        
         const streakElement = document.createElement('div');
         streakElement.className = 'habit-streak';
         streakElement.innerHTML = `<i class="fas fa-fire"></i> Серия: ${habit.currentStreak || 0} дн.`;
@@ -563,7 +613,8 @@ const habitsModule = {
         
         // Собираем все элементы вместе
         habitElement.appendChild(headerElement);
-        habitElement.appendChild(streakElement);
+        streakContainer.appendChild(streakElement);
+        habitElement.appendChild(streakContainer);
         habitElement.appendChild(checkboxesElement);
         
         return habitElement;
@@ -600,7 +651,7 @@ const habitsModule = {
     
     openHabitModal(habitId = null) {
         const modal = document.getElementById('habit-modal');
-        const modalTitle = document.getElementById('habit-modal-title');
+        const modalTitle = document.getElementById('habit-modal-title') || document.querySelector('#habit-modal h3');
         const form = document.getElementById('habit-form');
         
         // Сбрасываем форму
@@ -616,6 +667,9 @@ const habitsModule = {
         document.getElementById('custom-frequency-group').style.display = 'none';
         document.getElementById('reminder-time-group').style.display = 'none';
         
+        // Инициализация обработчиков событий для интерактивных элементов модального окна
+        this.setupModalEventListeners();
+        
         if (habitId) {
             // Режим редактирования
             this.state.selectedHabitId = habitId;
@@ -627,6 +681,22 @@ const habitsModule = {
                 // Заполняем форму данными привычки
                 document.getElementById('habit-name').value = habit.name;
                 document.getElementById('habit-description').value = habit.description || '';
+                
+                // Выбираем категорию
+                const categorySelect = document.getElementById('habit-category');
+                if (categorySelect && habit.category) {
+                    categorySelect.value = habit.category;
+                }
+                
+                // Устанавливаем целевое значение
+                const targetCountInput = document.getElementById('habit-target-count');
+                const targetUnitInput = document.getElementById('habit-target-unit');
+                if (targetCountInput && habit.targetCount) {
+                    targetCountInput.value = habit.targetCount;
+                }
+                if (targetUnitInput && habit.targetUnit) {
+                    targetUnitInput.value = habit.targetUnit;
+                }
                 
                 // Выбираем иконку
                 if (habit.icon) {
@@ -698,6 +768,85 @@ const habitsModule = {
         }
     },
     
+    setupModalEventListeners() {
+        // Повторная установка обработчиков событий для элементов в модальном окне
+        
+        // Выбор иконки
+        const iconOptions = document.querySelectorAll('.icon-option');
+        iconOptions.forEach(option => {
+            // Удаляем старые обработчики
+            const newOption = option.cloneNode(true);
+            option.parentNode.replaceChild(newOption, option);
+            
+            // Добавляем новые обработчики
+            newOption.addEventListener('click', () => {
+                iconOptions.forEach(o => o.classList.remove('selected'));
+                newOption.classList.add('selected');
+            });
+        });
+        
+        // Выбор цвета
+        const colorOptions = document.querySelectorAll('.color-option');
+        colorOptions.forEach(option => {
+            // Удаляем старые обработчики
+            const newOption = option.cloneNode(true);
+            option.parentNode.replaceChild(newOption, option);
+            
+            // Добавляем новые обработчики
+            newOption.addEventListener('click', () => {
+                colorOptions.forEach(o => o.classList.remove('selected'));
+                newOption.classList.add('selected');
+            });
+        });
+        
+        // Выбор дней недели - главное исправление!
+        const weekdayOptions = document.querySelectorAll('.weekday-option');
+        weekdayOptions.forEach(option => {
+            // Удаляем старые обработчики путем клонирования и замены
+            const newOption = option.cloneNode(true);
+            option.parentNode.replaceChild(newOption, option);
+            
+            // Добавляем новые обработчики
+            newOption.addEventListener('click', () => {
+                newOption.classList.toggle('selected');
+                console.log('День недели выбран:', newOption.textContent);
+            });
+        });
+        
+        // Настраиваем переключатель частоты
+        const frequencySelect = document.getElementById('habit-frequency');
+        frequencySelect.addEventListener('change', () => {
+            const value = frequencySelect.value;
+            const weekdaysGroup = document.getElementById('weekdays-group');
+            const customFrequencyGroup = document.getElementById('custom-frequency-group');
+            
+            if (value === 'weekly') {
+                weekdaysGroup.style.display = 'block';
+                customFrequencyGroup.style.display = 'none';
+            } else if (value === 'custom') {
+                weekdaysGroup.style.display = 'none';
+                customFrequencyGroup.style.display = 'block';
+            } else {
+                weekdaysGroup.style.display = 'none';
+                customFrequencyGroup.style.display = 'none';
+            }
+        });
+        
+        // Настройка переключателя напоминаний
+        const reminderToggle = document.getElementById('reminder-toggle');
+        const reminderTimeGroup = document.getElementById('reminder-time-group');
+        
+        if (reminderToggle) {
+            reminderToggle.addEventListener('change', () => {
+                if (reminderToggle.checked) {
+                    reminderTimeGroup.style.display = 'block';
+                } else {
+                    reminderTimeGroup.style.display = 'none';
+                }
+            });
+        }
+    },
+    
     closeHabitModal() {
         const modal = document.getElementById('habit-modal');
         if (modal) {
@@ -710,11 +859,15 @@ const habitsModule = {
         const nameInput = document.getElementById('habit-name');
         const descriptionInput = document.getElementById('habit-description');
         const frequencySelect = document.getElementById('habit-frequency');
+        const categorySelect = document.getElementById('habit-category');
+        const targetCountInput = document.getElementById('habit-target-count');
+        const targetUnitInput = document.getElementById('habit-target-unit');
         
         // Получаем значения из формы
         const name = nameInput.value.trim();
         const description = descriptionInput.value.trim();
         const frequency = frequencySelect.value;
+        const category = categorySelect.value;
         
         // Проверяем обязательные поля
         if (!name) {
@@ -774,6 +927,19 @@ const habitsModule = {
             reminderTime = document.getElementById('reminder-time').value || '09:00';
         }
         
+        // Получаем целевое значение
+        let targetCount = 1;
+        let targetUnit = '';
+        
+        if (targetCountInput) {
+            targetCount = parseInt(targetCountInput.value) || 1;
+            if (targetCount < 1) targetCount = 1;
+        }
+        
+        if (targetUnitInput) {
+            targetUnit = targetUnitInput.value.trim();
+        }
+        
         // Создаем или обновляем привычку
         const userId = localStorage.getItem('lifeQuestUserId');
         
@@ -786,11 +952,14 @@ const habitsModule = {
                 
                 habit.name = name;
                 habit.description = description;
+                habit.category = category;
                 habit.icon = icon;
                 habit.color = color;
                 habit.frequency = frequency;
                 habit.weekdays = weekdays;
                 habit.customDays = customDays;
+                habit.targetCount = targetCount;
+                habit.targetUnit = targetUnit;
                 habit.reminder = reminder;
                 habit.reminderTime = reminderTime;
                 habit.updatedAt = new Date().toISOString();
@@ -802,11 +971,14 @@ const habitsModule = {
                 userId,
                 name,
                 description,
+                category,
                 icon,
                 color,
                 frequency,
                 weekdays,
                 customDays,
+                targetCount,
+                targetUnit,
                 reminder,
                 reminderTime,
                 completedDates: [],
@@ -849,7 +1021,11 @@ const habitsModule = {
     }
 };
 
-// Инициализируем модуль привычек при загрузке страницы
+// Инициализируем модуль привычек при загрузке страницы, если находимся на странице habits.html
 document.addEventListener('DOMContentLoaded', () => {
-    habitsModule.init();
+    // Проверяем, что мы находимся на странице habits.html
+    // На главной странице инициализация происходит через app.js
+    if (window.location.pathname.includes('habits.html')) {
+        habitsModule.init();
+    }
 });

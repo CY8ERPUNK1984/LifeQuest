@@ -6,22 +6,29 @@ const authModule = {
         isAuthenticated: false
     },
     
+    // API URL
+    apiUrl: 'http://localhost:3000/api',
+    
     init() {
-        this.loadUsers();
         this.setupEventListeners();
         this.checkAuthentication();
     },
     
-    loadUsers() {
-        const savedUsers = localStorage.getItem('lifeQuestUsers');
-        if (savedUsers) {
-            this.state.users = JSON.parse(savedUsers);
+    // Загрузка пользователей с сервера
+    async loadUsers() {
+        try {
+            const response = await fetch(`${this.apiUrl}/users`);
+            if (!response.ok) throw new Error('Ошибка загрузки пользователей');
+            
+            const users = await response.json();
+            this.state.users = users;
+            return users;
+        } catch (error) {
+            console.error('Ошибка при загрузке пользователей:', error);
+            return [];
         }
     },
     
-    saveUsers() {
-        localStorage.setItem('lifeQuestUsers', JSON.stringify(this.state.users));
-    },
     
     setupEventListeners() {
         // Tab switching
@@ -87,21 +94,52 @@ const authModule = {
         });
     },
     
-    checkAuthentication() {
+    async checkAuthentication() {
         const authToken = localStorage.getItem('lifeQuestAuthToken');
-        if (authToken) {
-            const userId = localStorage.getItem('lifeQuestUserId');
-            if (userId) {
-                const user = this.state.users.find(u => u.id === userId);
-                if (user) {
-                    this.state.currentUser = user;
+        const userId = localStorage.getItem('lifeQuestUserId');
+        
+        if (authToken && userId) {
+            try {
+                // Проверяем токен на сервере
+                const response = await fetch(`${this.apiUrl}/auth/verify`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        userId,
+                        authToken
+                    })
+                });
+                
+                if (!response.ok) {
+                    // Токен недействителен, очищаем localStorage
+                    localStorage.removeItem('lifeQuestAuthToken');
+                    localStorage.removeItem('lifeQuestUserId');
+                    return false;
+                }
+                
+                const data = await response.json();
+                if (data.success) {
+                    this.state.currentUser = data.user;
                     this.state.isAuthenticated = true;
                     
-                    // Redirect to main app
-                    window.location.href = 'index.html';
+                    // Если мы на странице логина, перенаправляем на главную
+                    if (window.location.pathname.includes('login.html')) {
+                        window.location.href = 'index.html';
+                    }
+                    return true;
                 }
+            } catch (error) {
+                console.error('Ошибка при проверке аутентификации:', error);
             }
         }
+        
+        // Если мы на главной странице и не аутентифицированы, перенаправляем на логин
+        if (window.location.pathname.includes('index.html')) {
+            window.location.href = 'login.html';
+        }
+        return false;
     },
     
     switchTab(tabName) {
@@ -127,51 +165,57 @@ const authModule = {
         }
     },
     
-    handleLogin() {
+    async handleLogin() {
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
         
-        const user = this.state.users.find(u => u.email === email && u.password === password);
-        
-        if (user) {
-            this.state.currentUser = user;
-            this.state.isAuthenticated = true;
+        try {
+            const response = await fetch(`${this.apiUrl}/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
             
-            // Set auth token and user id in localStorage
-            const authToken = this.generateAuthToken();
-            localStorage.setItem('lifeQuestAuthToken', authToken);
-            localStorage.setItem('lifeQuestUserId', user.id);
+            const data = await response.json();
             
-            // Redirect to main app
-            window.location.href = 'index.html';
-        } else {
-            alert('Неверный email или пароль');
+            if (data.success) {
+                this.state.currentUser = data.user;
+                this.state.isAuthenticated = true;
+                
+                // Сохраняем токен и ID пользователя в localStorage
+                localStorage.setItem('lifeQuestAuthToken', data.authToken);
+                localStorage.setItem('lifeQuestUserId', data.user.id);
+                
+                // Перенаправляем на главную страницу
+                window.location.href = 'index.html';
+            } else {
+                alert('Неверный email или пароль');
+            }
+        } catch (error) {
+            console.error('Ошибка при входе в систему:', error);
+            alert('Произошла ошибка при входе в систему');
         }
     },
     
-    handleRegistration() {
+    async handleRegistration() {
         const name = document.getElementById('register-name').value;
         const email = document.getElementById('register-email').value;
         const password = document.getElementById('register-password').value;
         const confirmPassword = document.getElementById('register-confirm-password').value;
         
-        // Check if passwords match
+        // Проверяем совпадение паролей
         if (password !== confirmPassword) {
             alert('Пароли не совпадают');
             return;
         }
         
-        // Check if email is already registered
-        if (this.state.users.some(u => u.email === email)) {
-            alert('Пользователь с таким email уже зарегистрирован');
-            return;
-        }
-        
-        // Get selected avatar
+        // Получаем выбранный аватар
         const selectedAvatar = document.querySelector('.avatar-option.selected');
         const avatarId = selectedAvatar ? selectedAvatar.getAttribute('data-avatar') : '1';
         
-        // Create user
+        // Создаем объект нового пользователя
         const newUser = {
             id: this.generateId(),
             name,
@@ -181,38 +225,73 @@ const authModule = {
             createdAt: new Date().toISOString()
         };
         
-        // Add user to state
-        this.state.users.push(newUser);
-        this.saveUsers();
-        
-        // Auto-login new user
-        this.state.currentUser = newUser;
-        this.state.isAuthenticated = true;
-        
-        // Set auth token and user id in localStorage
-        const authToken = this.generateAuthToken();
-        localStorage.setItem('lifeQuestAuthToken', authToken);
-        localStorage.setItem('lifeQuestUserId', newUser.id);
-        
-        // Redirect to main app
-        window.location.href = 'index.html';
+        try {
+            // Отправляем данные на сервер
+            const response = await fetch(`${this.apiUrl}/users`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                if (response.status === 400) {
+                    alert('Пользователь с таким email уже зарегистрирован');
+                } else {
+                    alert(`Ошибка при регистрации: ${errorData.message || 'Неизвестная ошибка'}`);
+                }
+                return;
+            }
+            
+            // После успешной регистрации выполняем вход
+            const loginResponse = await fetch(`${this.apiUrl}/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
+            
+            const loginData = await loginResponse.json();
+            
+            if (loginData.success) {
+                this.state.currentUser = loginData.user;
+                this.state.isAuthenticated = true;
+                
+                // Сохраняем токен и ID пользователя в localStorage
+                localStorage.setItem('lifeQuestAuthToken', loginData.authToken);
+                localStorage.setItem('lifeQuestUserId', loginData.user.id);
+                
+                // Перенаправляем на главную страницу
+                window.location.href = 'index.html';
+            }
+        } catch (error) {
+            console.error('Ошибка при регистрации:', error);
+            alert('Произошла ошибка при регистрации');
+        }
     },
     
-    handlePasswordReset() {
+    async handlePasswordReset() {
         const email = document.getElementById('reset-email').value;
         
-        const user = this.state.users.find(u => u.email === email);
-        
-        if (user) {
-            // В реальном приложении тут можно отправить email для сброса пароля
-            // В нашем примере просто сбросим пароль на "12345"
-            user.password = '12345';
-            this.saveUsers();
+        try {
+            // Проверяем, существует ли пользователь с таким email
+            const users = await this.loadUsers();
+            const user = users.find(u => u.email === email);
             
-            alert('Пароль сброшен на "12345". В реальном приложении вы бы получили email с инструкциями для сброса пароля.');
-            this.showLoginForm();
-        } else {
-            alert('Пользователь с таким email не найден');
+            if (user) {
+                // В реальном приложении здесь будет отправка email с кодом сброса пароля
+                // Для демонстрации просто показываем успешное сообщение
+                alert(`Инструкции по сбросу пароля отправлены на ${email}`);
+                this.showLoginForm();
+            } else {
+                alert('Пользователь с таким email не найден');
+            }
+        } catch (error) {
+            console.error('Ошибка при сбросе пароля:', error);
+            alert('Произошла ошибка при запросе сброса пароля');
         }
     },
     

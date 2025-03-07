@@ -138,9 +138,25 @@
                     <img src="images/empty-habits.svg" alt="Нет привычек">
                     <h3>У вас пока нет привычек</h3>
                     <p>Добавьте новые привычки для отслеживания и улучшения своей жизни</p>
-                    <button id="create-first-habit" class="primary-btn">
-                        <i class="fas fa-plus"></i> Создать первую привычку
-                    </button>
+                    <div id="create-habit-button-container" style="display: inline-block;">
+                        <div id="create-first-habit" 
+                             style="background-color: #4CAF50; color: white; border: none; border-radius: 30px; padding: 12px 24px; font-size: 16px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); user-select: none;"
+                             onmouseover="this.style.backgroundColor='#45a049'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.15)';"
+                             onmouseout="this.style.backgroundColor='#4CAF50'; this.style.transform='none'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.1)';"
+                             onclick="if(typeof habitsModule !== 'undefined') habitsModule.openHabitModal();">
+                            <i class="fas fa-plus"></i> Создать первую привычку
+                        </div>
+                    </div>
+                    <script>
+                        // Дополнительная защита от изменений стилей
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var btn = document.getElementById('create-first-habit');
+                            if (btn) {
+                                btn.style.backgroundColor = '#4CAF50';
+                                btn.style.color = 'white';
+                            }
+                        });
+                    </script>
                 </div>
             </div>
             
@@ -243,16 +259,38 @@
                     <textarea id="habit-description" placeholder="Как и когда вы будете выполнять эту привычку?"></textarea>
                 </div>
                 <div class="form-group">
+                    <label for="habit-category">Категория</label>
+                    <select id="habit-category">
+                        <option value="health">Здоровье</option>
+                        <option value="productivity">Продуктивность</option>
+                        <option value="fitness">Фитнес</option>
+                        <option value="mindfulness">Осознанность</option>
+                        <option value="learning">Обучение</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="habit-target">Цель (опционально)</label>
+                    <div class="target-container">
+                        <input type="number" id="habit-target-count" min="1" max="100" value="1" style="width: 60px;">
+                        <input type="text" id="habit-target-unit" placeholder="единиц (раз, страниц, км...)" style="flex-grow: 1;">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label>Иконка</label>
                     <div class="icon-select" id="icon-select">
                         <div class="icon-option selected" data-icon="fas fa-running"><i class="fas fa-running"></i></div>
                         <div class="icon-option" data-icon="fas fa-book"><i class="fas fa-book"></i></div>
                         <div class="icon-option" data-icon="fas fa-apple-alt"><i class="fas fa-apple-alt"></i></div>
-                        <div class="icon-option" data-icon="fas fa-meditation"><i class="fas fa-meditation"></i></div>
+                        <div class="icon-option" data-icon="fas fa-pray"><i class="fas fa-pray"></i></div>
                         <div class="icon-option" data-icon="fas fa-dumbbell"><i class="fas fa-dumbbell"></i></div>
-                        <div class="icon-option" data-icon="fas fa-glass-water"><i class="fas fa-glass-water"></i></div>
+                        <div class="icon-option" data-icon="fas fa-tint"><i class="fas fa-tint"></i></div>
                         <div class="icon-option" data-icon="fas fa-bed"><i class="fas fa-bed"></i></div>
                         <div class="icon-option" data-icon="fas fa-smoking-ban"><i class="fas fa-smoking-ban"></i></div>
+                        <div class="icon-option" data-icon="fas fa-brain"><i class="fas fa-brain"></i></div>
+                        <div class="icon-option" data-icon="fas fa-heart"><i class="fas fa-heart"></i></div>
+                        <div class="icon-option" data-icon="fas fa-biking"><i class="fas fa-biking"></i></div>
+                        <div class="icon-option" data-icon="fas fa-sun"><i class="fas fa-sun"></i></div>
                     </div>
                 </div>
                 <div class="form-group">
